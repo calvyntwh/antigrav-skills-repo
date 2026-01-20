@@ -1,6 +1,6 @@
 ---
 name: pareto-principle
-description: Strategic Prioritization using the 80/20 Rule. Optimization of Scope.
+description: Strategic Prioritization using the 80/20 Rule. Optimization of Scope. Use when planning tasks, managing feature creep, or maximizing ROI.
 license: MIT
 ---
 
@@ -18,9 +18,10 @@ Do not ask "Can we do this?". Ask "Should we do this?".
 Follow these 3 steps.
 
 ### 1. List & Rate
-List every proposed feature or task. Assign two scores (1-10):
-*   **Customer Value (V):** How much does this substantially help the user?
-*   **Effort Cost (E):** How hard is it to build/maintain?
+List every proposed feature or task.
+**Ask the User** (or use Proxy Metrics):
+*   **Customer Value (V):** Ask user to rate 1-10 or rank items.
+*   **Effort Cost (E):** Proxy: "Number of files touched" or "Complexity of dependencies".
 
 ### 2. Calculate ROI
 Score = $V / E$ (Value divided by Effort).

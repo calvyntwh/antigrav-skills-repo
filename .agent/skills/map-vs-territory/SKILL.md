@@ -1,6 +1,6 @@
 ---
 name: map-vs-territory
-description: Empiricism and Reality Checking. Prioritizing runtime truth over documentation.
+description: Empiricism and Reality Checking. Prioritizing runtime truth over documentation. Use when debugging discrepancies, validating APIs, or when code comments might be outdated.
 license: MIT
 ---
 
@@ -24,7 +24,12 @@ Identify the "Map" you are relying on.
 *   *"The API docs say it returns 200 OK."*
 
 ### 2. The Probe
-Active verify the Territory. DO NOT READ CODE. **RUN CODE.**
+Active verify the Territory.
+
+> [!IMPORTANT]
+> **DO NOT READ CODE. RUN CODE.**
+> Reading code is reading the Map. Running code is touching the Territory.
+
 *   *Action:* `print(type(user))` -> Is it actually a User object? or a Dict? or None?
 *   *Action:* `console.log(isValid)` -> Is it `true`? `1`? `"true"`?
 *   *Action:* Inspect the raw HTTP body.

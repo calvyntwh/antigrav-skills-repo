@@ -23,7 +23,9 @@ First Principles Thinking is a mode of inquiry that relentlessly questions assum
 ### 1. Identify & Question Assumptions (Socratic Method)
 **Goal:** Expose the hidden beliefs limiting the current view.
 *   **Prompt:** "What are we assuming to be true here? Why do we think that?"
-*   **Technique:** Ask "Why?" 5 times until you hit a physical or logical hard stop.
+*   **Technique:** Ask "Why?" 5 times.
+    *   **CRITICAL:** Do not answer from memory. **Search/Read** to verify the answer to each "Why?".
+    *   *Stop:* When you hit a physical law, a mathematical truth, or a verified hard constraint.
 
 ### 2. Deconstruct to Constituent Parts
 **Goal:** Find the atomic units that cannot be reduced further.

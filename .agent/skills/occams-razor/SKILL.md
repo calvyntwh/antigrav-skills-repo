@@ -1,6 +1,6 @@
 ---
 name: occams-razor
-description: Complexity Pruning and Simplification using the Subtraction Method.
+description: Complexity Pruning and Simplification using the Subtraction Method. Use when refactoring, reducing boilerplate, or challenging over-engineered solutions.
 license: MIT
 ---
 
@@ -22,12 +22,14 @@ Follow these 4 steps explicitly.
 Assume the current solution is over-engineered.
 State: **"This solution is too complex. It can be simpler."**
 
-### 2. The "Why" Test
-Iterate through every component (file, class, function, library, config).
-Ask: **"What precisely breaks if I delete this?"**
-*   *Weak Answer:* "Ideally we might need it later..." -> **DELETE**.
-*   *Weak Answer:* "It makes it more 'enterprisey'..." -> **DELETE**.
-*   *Strong Answer:* "The application crashes on startup." -> **KEEP**.
+### 2. The "Why" Test (Safety Check)
+Iterate through every component. Prune ruthlessly, but verify safety.
+*   **Grep Test:** Search for the string/symbol in the entire codebase. Is it referenced dynamically?
+*   **Test Suite:** Run the project's tests. Do they pass?
+*   **Decision Matrix:**
+    *   *Unused & No Deps:* **DELETE**.
+    *   *Unused but "Nice to have":* **DELETE**.
+    *   *referenced or Tests Fail:* **KEEP**.
 
 ### 3. The Prune
 Actively remove the unnecessary components.

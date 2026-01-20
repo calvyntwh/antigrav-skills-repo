@@ -1,6 +1,6 @@
 ---
 name: inversion-thinking
-description: Proactive failure analysis using the Saboteur Method.
+description: Proactive failure analysis using the Saboteur Method. Use when designing critical systems, security features, or debugging root causes.
 license: MIT
 ---
 

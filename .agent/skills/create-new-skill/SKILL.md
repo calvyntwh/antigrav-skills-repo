@@ -63,10 +63,16 @@ This skill guides the agent in creating a new Antigravity skill. It uses an **Ag
 
 ### Validating a Skill
 
-1.  **Self-Validation**:
-    - **Read Back**: After writing, you MUST read the file (`view_file`) to ensure it saved correctly.
-    - Check that `SKILL.md` has valid YAML frontmatter.
-    - Check that the `name` matches the directory name.
+1.  **Automated Validation** (CRITICAL):
+    - **Action**: Run the validation tool to ensure the skill is compliant.
+    - **Command**: `uv run skills-ref validate .agent/skills/<skill-name>`
+    - **cwd**: `<workspace-root>/reference/agentskills/skills-ref`
+    - **Fix Loop**: If validation fails, READ the error, FIX the file, and RUN validation again. DO NOT PROCEED until it passes.
+
+2.  **Manual Reality Check**:
+    - **Read Back**: `view_file` the `SKILL.md`.
+    - Does the `description` accurately reflect the content?
+    - Is the `license: MIT` present?
 
 ### Packaging a Skill
 *Not required for local development.*

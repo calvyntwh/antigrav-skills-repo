@@ -1,6 +1,6 @@
 ---
 name: systems-thinking
-description: Architectural analysis using Feedback Loops and System Dynamics.
+description: Architectural analysis using Feedback Loops and System Dynamics. Use when designing architectures, scaling systems, or analyzing side effects.
 license: MIT
 ---
 
@@ -33,6 +33,8 @@ What is connected to this node?
 *   **Balancing Loop (B):** Does A produce B, which reduces A? (Stability/Resistance).
     *   *Example:* Auto-scaling. Load High -> Add Servers -> Load per Server Low -> Remove Servers.
 
-### 4. Simulation (The Delay)
-What happens *later*?
-*   "If I add cache, it works now. But in 5 minutes, data is stale. Do we have invalidation?"
+### 4. Validation (The Pre-Mortem)
+Do not guess. Look for evidence.
+*   **Log Analysis:** Look at past logs. Did similar changes cause latency spikes?
+*   **Edgeworth Box:** If I maximize X, what *must* decrease? (e.g. Speed vs Memory).
+*   **Drift:** "If we do this 1000 times a second, what breaks?"
