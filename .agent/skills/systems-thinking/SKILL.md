@@ -1,6 +1,7 @@
 ---
-name: Systems Thinking
+name: systems-thinking
 description: Architectural analysis using Feedback Loops and System Dynamics.
+license: MIT
 ---
 
 # Systems Thinking (The Loop Protocol)

@@ -1,6 +1,7 @@
 ---
-name: Map vs. Territory
+name: map-vs-territory
 description: Empiricism and Reality Checking. Prioritizing runtime truth over documentation.
+license: MIT
 ---
 
 # Map vs. Territory (The Reality Check)

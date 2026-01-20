@@ -1,6 +1,7 @@
 ---
-name: The Pareto Principle
+name: pareto-principle
 description: Strategic Prioritization using the 80/20 Rule. Optimization of Scope.
+license: MIT
 ---
 
 # The Pareto Principle (The Scope Hammer)

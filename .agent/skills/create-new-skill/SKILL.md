@@ -1,6 +1,7 @@
 ---
-name: create_new_skill
+name: create-new-skill
 description: Specialized skill for creating new Antigravity agent skills. Follows a Research -> Create -> Deploy workflow where the Agent directly creates the necessary files.
+license: MIT
 ---
 
 # Create New Skill

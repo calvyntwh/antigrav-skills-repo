@@ -1,6 +1,7 @@
 ---
-name: Inversion Thinking
+name: inversion-thinking
 description: Proactive failure analysis using the Saboteur Method.
+license: MIT
 ---
 
 # Inversion Thinking (The Saboteur Method)

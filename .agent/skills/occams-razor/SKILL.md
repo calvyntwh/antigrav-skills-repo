@@ -1,6 +1,7 @@
 ---
-name: Occam's Razor
+name: occams-razor
 description: Complexity Pruning and Simplification using the Subtraction Method.
+license: MIT
 ---
 
 # Occam's Razor (The Subtraction Method)
