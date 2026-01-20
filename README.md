@@ -25,3 +25,9 @@ To use a skill:
 1.  Ensure the `.agent/skills/` directory is accessible to your agent context.
 2.  The Antigravity system automatically indexes valid skills found in this directory.
 3.  Refer to the specific `SKILL.md` file for instructions on invoking and utilizing each skill.
+
+## 📚 References
+
+*   [Antigravity Skills Documentation](https://antigravity.google/docs/skills)
+*   [Agent Skills Specification](https://agentskills.io/specification)
+*   [Integrate Skills Guide](https://agentskills.io/integrate-skills)
