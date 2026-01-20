@@ -26,10 +26,11 @@ State: **"This solution is too complex. It can be simpler."**
 Iterate through every component. Prune ruthlessly, but verify safety.
 *   **Grep Test:** Search for the string/symbol in the entire codebase. Is it referenced dynamically?
 *   **Test Suite:** Run the project's tests. Do they pass?
+*   **Chesterton Check:** If uncertain about purpose, invoke [`chestertons-fence`](../chestertons-fence/SKILL.md) protocol first.
 *   **Decision Matrix:**
     *   *Unused & No Deps:* **DELETE**.
     *   *Unused but "Nice to have":* **DELETE**.
-    *   *referenced or Tests Fail:* **KEEP**.
+    *   *Referenced or Tests Fail:* **KEEP**.
 
 ### 3. The Prune
 Actively remove the unnecessary components.

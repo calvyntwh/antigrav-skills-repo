@@ -1,25 +1,45 @@
-# failure_modes.md - The Saboteur's Cheat Sheet
+# Failure Modes Reference
 
-Use these categories to find weak points in the system.
+A catalog of common failure pathways to consider during Inversion Thinking.
 
-## 1. Entropy (Natural Decay)
-*   **Race Conditions:** What happens if two requests happen at the exact same microsecond?
-*   **Timeouts:** What if the database takes 30 seconds to respond?
-*   **Data Corruption:** What if the JSON is malformed or cut off?
-*   **Resource Exhaustion:** What if the disk is full? What if memory is 100%?
+## Categories
 
-## 2. Malice (The Attacker)
-*   **Injection:** SQL, XSS, Command Injection. Can I execute code?
-*   **Privilege Escalation:** Can I access data I shouldn't own? IDOR?
-*   **Replay Attacks:** Can I send the same "pay" request 10 times?
-*   **Denial of Service:** Can I lock the resource for everyone else?
+### 1. Input Attacks
+- **Oversized Payload:** 10GB file upload crashes memory.
+- **Malformed Input:** Invalid JSON/XML causes parser crash.
+- **Boundary Values:** Empty strings, zero, MAX_INT, negative numbers.
+- **Injection:** SQL, XSS, Command Injection via unsanitized input.
 
-## 3. Ignorance (The User)
-*   **Bad Input:** Nulls, emojis, massive strings, negative numbers.
-*   **Misunderstanding:** What if the user clicks "Back" during a transaction?
-*   **Legacy Data:** What if old data doesn't match the new schema?
+### 2. Authentication & Authorization
+- **Privilege Escalation:** `?admin=true` in URL/body.
+- **Broken Access Control:** User A accesses User B's data via ID enumeration.
+- **Session Hijacking:** Predictable session tokens.
+- **Missing Auth Check:** Endpoint skips authentication middleware.
 
-## 4. Scale (The Crowd)
-*   **Thundering Herd:** What if 10,000 users retry at once?
-*   **Latency Spikes:** What if the network adds 500ms jitter?
-*   **Connection Limits:** What if we run out of DB connections?
+### 3. State & Concurrency
+- **Race Condition:** Two requests modify same resource simultaneously.
+- **Deadlock:** Circular lock dependency halts system.
+- **Stale Cache:** Cache returns outdated data after update.
+- **Orphaned State:** Transaction fails mid-way, leaving partial data.
+
+### 4. External Dependencies
+- **Timeout:** External API takes 60s, your timeout is 30s.
+- **Unavailability:** Database goes down, no retry/fallback.
+- **Version Mismatch:** Dependency updates break API contract.
+- **Rate Limiting:** External service returns 429, no backoff logic.
+
+### 5. Resource Exhaustion
+- **Memory Leak:** Objects never garbage collected.
+- **Connection Pool Exhaustion:** All DB connections consumed.
+- **Disk Full:** Logs/temp files fill storage.
+- **Thread Starvation:** All threads blocked on I/O.
+
+### 6. Infrastructure
+- **Network Partition:** Service A cannot reach Service B.
+- **Clock Skew:** Distributed timestamps become inconsistent.
+- **DNS Failure:** Domain resolution fails.
+- **Certificate Expiry:** HTTPS fails silently.
+
+## Usage
+When performing Inversion Thinking, scan this list and ask:
+> "Which of these failure modes apply to my current design?"

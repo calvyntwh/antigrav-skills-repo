@@ -34,6 +34,9 @@ Active verify the Territory.
 *   *Action:* `console.log(isValid)` -> Is it `true`? `1`? `"true"`?
 *   *Action:* Inspect the raw HTTP body.
 
+> [!TIP]
+> **Fallback:** If you cannot run code directly, ask the user to run it and report the output.
+
 ### 3. The Update
 If Map $\neq$ Territory, **The Map is Wrong.**
 *   Update the docs/comments.

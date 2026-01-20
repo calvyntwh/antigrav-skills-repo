@@ -63,11 +63,13 @@ This skill guides the agent in creating a new Antigravity skill. It uses an **Ag
 
 ### Validating a Skill
 
-1.  **Automated Validation** (CRITICAL):
-    - **Action**: Run the validation tool to ensure the skill is compliant.
-    - **Command**: `uv run skills-ref validate .agent/skills/<skill-name>`
-    - **cwd**: `<workspace-root>/reference/agentskills/skills-ref`
-    - **Fix Loop**: If validation fails, READ the error, FIX the file, and RUN validation again. DO NOT PROCEED until it passes.
+1.  **Manual Specification Check**:
+    - **Action**: Verify the skill against the [Agent Skills Specification](https://agentskills.io/specification).
+    - **Checklist**:
+      - `name`: lowercase, hyphens only, matches directory name, 1-64 chars.
+      - `description`: 1-1024 chars, describes "what" AND "when to use".
+      - `license`: Present (optional but recommended).
+    - **Fix Loop**: If any field is invalid, FIX the file and RE-VERIFY.
 
 2.  **Manual Reality Check**:
     - **Read Back**: `view_file` the `SKILL.md`.

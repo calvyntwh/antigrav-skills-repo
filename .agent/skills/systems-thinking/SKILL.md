@@ -36,5 +36,5 @@ What is connected to this node?
 ### 4. Validation (The Pre-Mortem)
 Do not guess. Look for evidence.
 *   **Log Analysis:** Look at past logs. Did similar changes cause latency spikes?
-*   **Edgeworth Box:** If I maximize X, what *must* decrease? (e.g. Speed vs Memory).
-*   **Drift:** "If we do this 1000 times a second, what breaks?"
+*   **Trade-off Question:** "If I maximize X, what *must* decrease?" (e.g., Speed vs Memory).
+*   **Drift Test:** "If we do this 1000 times a second, what breaks?"
